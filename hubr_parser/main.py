@@ -61,10 +61,10 @@ def get_all_habr_posts(soup: BeautifulSoup)-> list[ArticleData]:
     for article_soup in all_articles_soup:
         element = article_soup.find("a", class_="tm-title__link")
         article_title = element.find("span").text
-        print(f"{article_title=}")
+        #print(f"{article_title=}")
         href = element["href"]
         article_views = article_soup.find("span", class_="tm-icon-counter__value").text
-        print(f"{article_views=}")
+        #print(f"{article_views=}")
         text = get_text(href)
         posts_data.append(ArticleData(
             title= article_title,
